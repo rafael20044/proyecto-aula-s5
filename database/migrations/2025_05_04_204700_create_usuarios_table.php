@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('nombre2', 50)->nullable(true);
             $table->string('apellido1', 70)->nullable(false);
             $table->string('apellido2', 70)->nullable(false);
-            $table->string('correo', 225)->nullable(false)->unique();
-            $table->string('clave', 225)->nullable(false);
+            $table->string('email', 225)->nullable(false)->unique();
+            $table->string('password', 225)->nullable(false);
             $table->enum('rol', self::ROLES)->default('estudiante');
             $table->enum('estado', self::ESTADOS)->default('activo');
             $table->timestamps();
