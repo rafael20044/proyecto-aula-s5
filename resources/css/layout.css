@@ -1,0 +1,104 @@
+:root{
+    --color-navs: #474574;
+    --color-font: #07051A;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-areas:
+    "header header "
+    "nav main";
+    grid-template-rows: 7rem 82vh;
+    grid-template-columns: 15rem;
+}
+
+body header{
+    grid-area: header;
+    background-color: var(--color-navs);
+    display: flex;
+    align-items: center;
+    /*justify-content: space-around;*/
+    gap: 24%;
+}
+
+body header a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--color-font);
+    text-decoration: none;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+body a img{
+    width: 50%;
+}
+
+/*.body-layout header .buscador input{
+    border-radius: 15px;
+    padding: 0.5rem;
+    padding-left: 1rem;
+}*/
+body header .buscador {
+    position: relative;
+    width: max-content;
+}
+
+body header .buscador input {
+    padding: 10px 35px 10px 10px; /* Espacio a la derecha para la lupa */
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+body header .buscador img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+body .logings{
+    display: flex;
+    gap: 1rem;
+}
+
+body header .logings a{
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: white;
+    font-size: 1rem;
+}
+
+body nav{
+    grid-area: nav;
+    background-color: var(--color-navs);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+body nav a{
+    color: var(--color-font);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+body main{
+    grid-area: main;
+}
