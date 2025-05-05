@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('usuario_id')->constrained('usuarios');
             $table->foreignId('etiqueta_id')->constrained('etiquetas');
-            $table->string('titñulo',225)->nullable(false);
+            $table->string('titulo',225)->nullable(false);
             $table->text('contenido')->nullable(false);
             $table->enum('estado', self::ESTADOS)->default('pendiente');
             $table->timestamps();
