@@ -29,7 +29,7 @@ class ReaccionController
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
