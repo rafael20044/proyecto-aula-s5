@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $titulo }}</title>
+    @vite(['resource/css/layout2.css'])
 </head>
 <body>
     {{ $slot }}
