@@ -42,7 +42,6 @@ class UsuarioController
         if (!$usuario) {
             return session(['error' => 'Error al crear usuario']);
         }
-
         return view('login');
     }
 

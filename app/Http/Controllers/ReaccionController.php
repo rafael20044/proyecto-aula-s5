@@ -40,6 +40,7 @@ class ReaccionController
             return session(['error' => 'Error al crear la reaccion']);
         }
         
+        
     }
 
     /**

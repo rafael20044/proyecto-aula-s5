@@ -29,7 +29,16 @@ class RespuestaController
      */
     public function store(Request $request)
     {
-        //
+        $request ->validate([
+            'usuario_id' => 'integer|required',
+            'pregunta_id' => 'integer|required',
+            'contenido' => 'string|required'
+        ]);
+        $respuesta = Respuesta::create($request);
+        if (!$respuesta) {
+            return session(['error' => 'error al crear respuesta']);
+        }
+
     }
 
     /**
