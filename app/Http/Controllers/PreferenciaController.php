@@ -29,7 +29,14 @@ class PreferenciaController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'usuario_id' => 'integer|required',
+            'etiqueta_id' => 'integer|required'
+        ]);
+        $preferencia = Preferencia::create($request);
+        if (!$preferencia) {
+            return session(['error' => 'Error al crear preferencia']);
+        }
     }
 
     /**

@@ -29,7 +29,13 @@ class EtiquetaController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|require'
+        ]);
+        $etiqueta = Etiqueta::create($request);
+        if (!$etiqueta) {
+            return session(['error' => 'Error al crear etiqueta']);
+        }
     }
 
     /**
