@@ -29,7 +29,21 @@ class UsuarioController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre1' => 'string|required',
+            'nombre2' => 'string',
+            'apellido1' => 'string|required',
+            'apellido2' => 'string|required',
+            'email' => 'string|email|required',
+            'password' => 'string|required'
+        ]);
+
+        $usuario = Usuario::create($request);
+        if (!$usuario) {
+            return session(['error' => 'Error al crear usuario']);
+        }
+
+        return view('login');
     }
 
     /**

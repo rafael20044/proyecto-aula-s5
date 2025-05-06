@@ -29,7 +29,17 @@ class ReaccionController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'usuario_id' => 'required',
+            'pregunta_id' => '',
+            'respuesta_id' => '', 
+            'tipo' =>'string'
+        ]);
+        $reaccion = Reaccion::create($request);
+        if (!$reaccion) {
+            return session(['error' => 'Error al crear la reaccion']);
+        }
+        
     }
 
     /**

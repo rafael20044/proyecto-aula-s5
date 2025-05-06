@@ -29,7 +29,17 @@ class PreguntaController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'usuario_id' => 'integer|required',
+            'etiqueta_id' => 'integer|required',
+            'titulo' => 'string|required',
+            'contenido' => 'string|required'
+        ]);
+        $pregunta = Pregunta::create($request);
+        if ($pregunta) {
+            return session(['error' => 'Error al crear la pregunta']);
+        }
+
     }
 
     /**
